@@ -29,13 +29,13 @@
     $sql = "SELECT id FROM users WHERE username = '$username' and password = '$password'";
     $result = mysqli_query($con,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-    $active = $row[‘active’];
+    $active = $row['active'];
     $count = mysqli_num_rows($result);
     //If result matched myusername and mypassword, table row must be 1 row                    
     if($count >0) {
-        $response= “Your Login success”;
+        $response= "Your Login success";
     }else {
-        $response= “Your Login Email or Password is invalid”;         
+        $response= "Your Login Email or Password is invalid";         
     }
     echo json_encode( $response);
 
